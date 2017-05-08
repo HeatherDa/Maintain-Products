@@ -59,6 +59,8 @@
             this.techSupport_DataDataSet = new Maintain_Products.TechSupport_DataDataSet();
             this.productsTableAdapter = new Maintain_Products.TechSupport_DataDataSetTableAdapters.ProductsTableAdapter();
             this.tableAdapterManager = new Maintain_Products.TechSupport_DataDataSetTableAdapters.TableAdapterManager();
+            this.btnGetProducts = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             productCodeLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             versionLabel = new System.Windows.Forms.Label();
@@ -132,7 +134,7 @@
             this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.productsBindingNavigator.Name = "productsBindingNavigator";
             this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productsBindingNavigator.Size = new System.Drawing.Size(307, 25);
+            this.productsBindingNavigator.Size = new System.Drawing.Size(512, 25);
             this.productsBindingNavigator.TabIndex = 0;
             this.productsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -245,6 +247,7 @@
             // 
             this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "Name", true));
             this.txtName.Location = new System.Drawing.Point(95, 87);
+            this.txtName.MaxLength = 50;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 20);
             this.txtName.TabIndex = 4;
@@ -270,10 +273,12 @@
             this.fillByProductCodeToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productCodeToolStripLabel,
             this.productCodeToolStripTextBox,
-            this.fillByProductCodeToolStripButton});
+            this.fillByProductCodeToolStripButton,
+            this.toolStripSeparator1,
+            this.btnGetProducts});
             this.fillByProductCodeToolStrip.Location = new System.Drawing.Point(0, 25);
             this.fillByProductCodeToolStrip.Name = "fillByProductCodeToolStrip";
-            this.fillByProductCodeToolStrip.Size = new System.Drawing.Size(307, 25);
+            this.fillByProductCodeToolStrip.Size = new System.Drawing.Size(512, 25);
             this.fillByProductCodeToolStrip.TabIndex = 9;
             this.fillByProductCodeToolStrip.Text = "fillByProductCode";
             // 
@@ -292,7 +297,7 @@
             // 
             this.fillByProductCodeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillByProductCodeToolStripButton.Name = "fillByProductCodeToolStripButton";
-            this.fillByProductCodeToolStripButton.Size = new System.Drawing.Size(109, 19);
+            this.fillByProductCodeToolStripButton.Size = new System.Drawing.Size(109, 22);
             this.fillByProductCodeToolStripButton.Text = "FillByProductCode";
             this.fillByProductCodeToolStripButton.Click += new System.EventHandler(this.fillByProductCodeToolStripButton_Click);
             // 
@@ -316,11 +321,26 @@
             this.tableAdapterManager.ProductsTableAdapter = this.productsTableAdapter;
             this.tableAdapterManager.UpdateOrder = Maintain_Products.TechSupport_DataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // btnGetProducts
+            // 
+            this.btnGetProducts.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnGetProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnGetProducts.Image")));
+            this.btnGetProducts.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGetProducts.Name = "btnGetProducts";
+            this.btnGetProducts.Size = new System.Drawing.Size(96, 22);
+            this.btnGetProducts.Text = "Get All Products";
+            this.btnGetProducts.Click += new System.EventHandler(this.btnGetProducts_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // ProductMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 171);
+            this.ClientSize = new System.Drawing.Size(512, 171);
             this.Controls.Add(this.fillByProductCodeToolStrip);
             this.Controls.Add(productCodeLabel);
             this.Controls.Add(this.txtProdCode);
@@ -373,6 +393,8 @@
         private System.Windows.Forms.ToolStripLabel productCodeToolStripLabel;
         private System.Windows.Forms.ToolStripTextBox productCodeToolStripTextBox;
         private System.Windows.Forms.ToolStripButton fillByProductCodeToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnGetProducts;
     }
 }
 
